@@ -1,19 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/main.js',
 
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
   },
 
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.s[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
@@ -22,15 +23,24 @@ module.exports = {
       },
 
       {
-        test: /\.(woff|woff2|svg|jpg|png)$/,
-        use: {
-          loader: 'url-loader',
+        test: /\.(woff|woff2)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
         },
       },
+
+      // {
+      //   test: /\.(svg|jpe?g|png|ico)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //   },
+      // },
     ],
   },
   
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
@@ -39,7 +49,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'build'),
     },
     open: true,
   },

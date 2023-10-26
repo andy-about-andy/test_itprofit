@@ -2,10 +2,11 @@
   "name": "test_itprofit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack"
+    "build": "webpack",
+    "server": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/andy-about-andy/test_itprofit#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
