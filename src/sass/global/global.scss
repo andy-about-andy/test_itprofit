@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: size-desktop(320px);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-style: normal;
+  font-weight: 400;
+  font-size: size-desktop($fz-default);
+  line-height: size(20px);
+  font-family: $ff-manrope;
+  color: $color-default-black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  @include vp-992 {
+    font-size: $fz-default;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $color-default-white;
+}
+
+a {
+  color: $color-default-black;
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px $color-default-white;
+
+  -webkit-text-fill-color: $color-default-black;
+}
+
+// firefox placeholder \ invalid fix + ios bdrs
+input,
+textarea {
+  width: 400px;
+  height: 70px;
+  padding: 11px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba(238, 77, 71, 0.50);
+  background-color: $color-default-white;
+
+  &::placeholder {
+    width: 160px;
+    height: 38px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 40px;
+    opacity: 1;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+select {
+  border-radius: 0;
+}
+
+select,
+textarea,
+input:matches([type="email"],
+  [type="tel"],
+  [type="text"]) {
+  appearance: none;
+}
+
+button,
+[type="button"],
+[type="submit"] {
+  appearance: none;
+}
+
+section {
+  margin-bottom: 60px;
+}

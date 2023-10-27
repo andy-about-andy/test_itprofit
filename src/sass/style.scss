@@ -1,18 +1,23 @@
-@import url(./font.scss);
+// Global
+// ---------------------------------
+@import "global/variables";
+@import "global/functions";
+@import "global/font";
+@import "global/global";
+@import "global/utils";
+@import "global/container";
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  // background-color: tomato;
-}
 
-h1 {
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 10px;
-  font-family: 'Manrope';
-}
+
+// h1 {
+//   width: 100%;
+//   max-width: 500px;
+//   margin-bottom: 10px;
+//   font-family: 'Manrope';
+// }
+
+// Blocks
+// ---------------------------------
+@import "blocks/form";
+@import "blocks/btn";
+@import "blocks/modal";

@@ -1,0 +1,36 @@
+// Скейлинг
+// ---------------------------------
+
+// Значения в rem
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default) * 1rem;
+}
+
+// Значения в vw
+@function size-desktop($size-in-px) {
+  @return calc($size-in-px / $vp-1920) * 100vw;
+}
+
+// Mixins
+// ---------------------------------
+
+// Desktop first
+@mixin vp-992 {
+  @media (max-width: ($vp-993 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: ($vp-768 - 1px)) {
+    @content;
+  }
+}
+
+// Ретинизация изображений
+// ---------------------------------
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}

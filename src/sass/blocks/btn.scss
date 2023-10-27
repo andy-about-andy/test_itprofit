@@ -1,0 +1,44 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 60px;
+  flex-shrink: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  color: $color-default-white;
+
+  background-color: $color-sunset-orange;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: opacity $trans-default;
+
+  &--red {
+    background-color: $color-torch-red;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  // @include hover-focus {
+  //   opacity: 0.8;
+  // }
+
+  &--form-send {
+    margin-top: 30px;
+  }
+
+  // &--modal {
+    
+  // }
+}

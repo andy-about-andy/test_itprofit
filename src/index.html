@@ -4,9 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тестовое задание itprofit</title>
+  <!-- <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/manrope.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope-semibold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials"> -->
 </head>
 <body>
-  <h1>Тест</h1>
+  <div class="wrapper">
+    <header></header>
+    <main>
+      <h1 class="visually-hidden">Тестовое задание itprofit</h1>
+      <section>
+        <div class="container">
+          <div class="form">
+            <form action="http://localhost:9090/api/ping" method="post">
+              <h2>Форма обратной связи</h2>
+              <div class="form__field form__field--name">
+                <label>
+                  <input type="text" name="name" placeholder="Имя *" required> 
+                </label>
+              </div>
+              <div class="form__field form__field--email">
+                <label>
+                  <input type="email" id="email" name="email" placeholder="Email *" required>
+                </label>
+              </div>
+              <div class="form__field form__field--phone">
+                <label>
+                  <input type="tel" id="number-phone" name="phone" placeholder="Телефон *" required>
+                </label>
+              </div>
+              <div>
+                <label>
+                  <textarea name="text-emotions" cols="30" rows="10" placeholder="Комментарий *" required></textarea>
+                </label>
+              </div>
+              <button class="btn btn--form-send" type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="modal">
+            <h2 class="visually-hidden">Модальное окно</h2>
+            <button class="btn btn--modal" type="button" aria-label="Открыть модальное окно">Нажми на меня</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </div>
   <script src="bundle.js"></script>
 </body>
 </html>
