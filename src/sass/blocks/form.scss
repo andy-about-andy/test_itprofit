@@ -1,6 +1,7 @@
 .form {
   width: auto;
   // height: 440px;
+  align-items: center;
   margin-top: 60px;
   padding: 50px;
   background-color: $color-default-white;
@@ -20,5 +21,15 @@
 
   & textarea {
     height: 150px;
+  }
+
+  input:valid,
+  textarea:valid {
+    border: 2px solid $color-atlantis;
+  }
+
+  input:invalid,
+  textarea:invalid {
+    border: 2px solid $color-torch-red;
   }
 }
