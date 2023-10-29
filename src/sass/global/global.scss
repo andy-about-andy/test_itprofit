@@ -8,7 +8,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-width: size-desktop(320px);
+  min-width: 320px;
   min-height: 100vh;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
@@ -17,17 +17,13 @@ body {
 html {
   font-style: normal;
   font-weight: 400;
-  font-size: size-desktop($fz-default);
-  line-height: size(20px);
+  font-size: $fz-default;
+  line-height: 20px;
   font-family: $ff-manrope;
   color: $color-default-black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
-  @include vp-992 {
-    font-size: $fz-default;
-  }
 }
 
 body {
@@ -54,7 +50,8 @@ input:-webkit-autofill {
 // firefox placeholder \ invalid fix + ios bdrs
 input,
 textarea {
-  width: 400px;
+  display: inline-flex;
+  width: 100%;
   height: 70px;
   padding: 11px 40px;
   font-size: 18px;
@@ -63,6 +60,7 @@ textarea {
   border-radius: 5px;
   border: 1px solid rgba(238, 77, 71, 0.50);
   background-color: $color-default-white;
+  transition: opacity $trans-default;
 
   &::placeholder {
     width: 160px;
@@ -71,10 +69,22 @@ textarea {
     font-weight: 700;
     line-height: 40px;
     opacity: 1;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 
   &:invalid {
     box-shadow: none;
+  }
+
+  @include vp-767 {
+    height: 50px;
+    padding: 11px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
