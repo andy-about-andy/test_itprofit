@@ -29,13 +29,6 @@ module.exports = {
           filename: 'fonts/[name][ext]'
         },
       },
-
-      // {
-      //   test: /\.(svg|jpe?g|png|ico)$/,
-      //   use: {
-      //     loader: 'url-loader',
-      //   },
-      // },
     ],
   },
   
